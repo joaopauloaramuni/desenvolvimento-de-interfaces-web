@@ -26,6 +26,39 @@ Disciplina do curso de Engenharia de Software da PUC Minas
 ##### Calendário Acadêmico
 - 📅 [Calendário Acadêmico 2026 - PUC Minas](https://github.com/user-attachments/files/24117743/calendario-academico-2026.pdf)
 
+##### 📚 Referências gerais
+
+###### 📖 Bibliografia Básica
+
+- 📕 [JavaScript: O Guia Definitivo – David Flanagan](https://www.amazon.com.br/s?k=JavaScript+O+Guia+Definitivo+David+Flanagan)  
+  Referência completa sobre JavaScript, abordando desde os fundamentos da linguagem até conceitos avançados, incluindo manipulação do DOM, programação assíncrona e boas práticas para desenvolvimento web.
+
+- 📘 [Desenvolvimento de Software II: Introdução ao Desenvolvimento Web com HTML, CSS, JavaScript e PHP – Evandro Manara Miletto](https://www.amazon.com.br/s?k=Desenvolvimento+de+Software+II+Evandro+Manara+Miletto)  
+  Introduz os principais conceitos do desenvolvimento web, apresentando HTML, CSS, JavaScript e PHP por meio de exemplos práticos para construção de aplicações web.
+
+- 📗 [CSS3: Desenvolva Aplicações Web Profissionais com Uso dos Poderosos Recursos de Estilização das CSS3 – Maurício Samy Silva](https://www.amazon.com.br/s?k=CSS3+Maur%C3%ADcio+Samy+Silva)  
+  Explora os recursos do CSS3 para criação de interfaces modernas e responsivas, abordando layouts, animações, efeitos visuais e técnicas avançadas de estilização.
+
+###### ➕ Bibliografia Complementar
+
+- 📙 [Ajax, Rich Internet Applications e Desenvolvimento Web para Programadores – Paul J. Deitel, Harvey M. Deitel](https://www.amazon.com.br/s?k=Ajax+Rich+Internet+Applications+e+Desenvolvimento+Web+para+Programadores)  
+  Apresenta o uso de AJAX e tecnologias relacionadas para construção de aplicações web dinâmicas, interativas e com melhor experiência para o usuário.
+
+- 📕 [HTML5 – Embarque Imediato – Fábio Flatschart](https://www.amazon.com.br/s?k=HTML5+Embarque+Imediato+F%C3%A1bio+Flatschart)  
+  Guia introdutório sobre HTML5 que aborda os principais elementos da linguagem, recursos multimídia, formulários e novas funcionalidades para desenvolvimento web.
+
+- 📘 [Introdução ao HTML5 – Bruce Lawson, Remy Sharp](https://www.amazon.com.br/s?k=Introdu%C3%A7%C3%A3o+ao+HTML5+Bruce+Lawson+Remy+Sharp)  
+  Explica os fundamentos e as novidades do HTML5, incluindo semântica, APIs, multimídia e boas práticas para desenvolvimento de páginas modernas.
+
+- 📗 [Guia de Orientação e Desenvolvimento de Sites HTML, XHTML, CSS e JavaScript/JScript – José Augusto N. G. Manzano, Suely Alves de Toledo](https://www.amazon.com.br/s?k=Guia+de+Orienta%C3%A7%C3%A3o+e+Desenvolvimento+de+Sites+HTML+XHTML+CSS+e+JavaScript+JScript)  
+  Apresenta conceitos e técnicas para criação de sites utilizando HTML, XHTML, CSS e JavaScript, com foco na estruturação, estilização e interatividade das páginas.
+
+- 📙 [Design de Interação: Além da Interação Homem-Computador – Jennifer Preece, Yvonne Rogers, Helen Sharp](https://www.amazon.com.br/s?k=Design+de+Intera%C3%A7%C3%A3o+Jennifer+Preece+Yvonne+Rogers+Helen+Sharp)  
+  Obra clássica sobre design de interação e experiência do usuário (UX), abordando princípios, métodos e práticas para o desenvolvimento de interfaces centradas no usuário.
+
+- 📕 [HTML5 Guia Prático – Evandro Carlos Teruel](https://www.amazon.com.br/s?k=HTML5+Guia+Pr%C3%A1tico+Evandro+Carlos+Teruel)  
+  Manual prático para desenvolvimento com HTML5, apresentando exemplos de criação de páginas, formulários, recursos multimídia e integração com outras tecnologias da web.
+
 -----
 
 <div align="center">
