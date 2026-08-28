@@ -8,9 +8,21 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/joaopauloaramuni/desenvolvimento-de-interfaces-web?style=for-the-badge&logo=files) ![GitHub directory file count](https://img.shields.io/github/directory-file-count/joaopauloaramuni/desenvolvimento-de-interfaces-web?style=for-the-badge&logo=files) ![GitHub stars](https://img.shields.io/github/stars/joaopauloaramuni/desenvolvimento-de-interfaces-web?style=for-the-badge&logo=github) ![GitHub forks](https://img.shields.io/github/forks/joaopauloaramuni/desenvolvimento-de-interfaces-web?style=for-the-badge&logo=git) ![GitHub language count](https://img.shields.io/github/languages/count/joaopauloaramuni/desenvolvimento-de-interfaces-web?style=for-the-badge&logo=python) ![GitHub license](https://img.shields.io/github/license/joaopauloaramuni/desenvolvimento-de-interfaces-web?style=for-the-badge&logo=opensourceinitiative&color=007ec6) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/joaopauloaramuni/desenvolvimento-de-interfaces-web?style=for-the-badge&color=007ec6&logo=gitkraken) ![GitHub last commit](https://img.shields.io/github/last-commit/joaopauloaramuni/desenvolvimento-de-interfaces-web?style=for-the-badge&logo=clockify) ![Views Counter](https://views-counter.vercel.app/badge?pageId=https%3A%2F%2Fgithub%2Ecom%2Fjoaopauloaramuni%2Fdesenvolvimento-de-interfaces-web&leftColor=555555&rightColor=007ec6&type=total&label=RepoViews)  
 
-Disciplina do curso de Engenharia de Software da PUC Minas
-
-- 2°Sem 2026
+<table>
+  <tr>
+    <td width="700px">
+      <div align="justify">
+        Disciplina do curso de Ciência da Computação da PUC Minas</br>
+        2°Sem 2026
+      </div>
+    </td>
+    <td>
+      <div>
+        <img src="https://joaopauloaramuni.github.io/image/cc-puc.jpg" alt="Logo" width="120px"/>
+      </div>
+    </td>
+  </tr> 
+</table>
 
 -----
 
