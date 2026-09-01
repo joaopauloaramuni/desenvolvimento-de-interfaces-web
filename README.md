@@ -31,6 +31,7 @@
 - [Cronograma](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/CRONOGRAMA)
 - [Atalhos](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/ATALHOS)
 - [Laboratórios](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/LABORATORIOS)
+- [Projetos](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/PROJETOS)
 - [Templates](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/TEMPLATES)
 - [Plano de Ensino](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/PLANO%20DE%20ENSINO)
 
