@@ -28,7 +28,6 @@
 
 ### Sumário:
 - [Aulas em PDF](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/PDF)
-- [Cronograma](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/CRONOGRAMA)
 - [Atalhos](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/ATALHOS)
 - [Laboratórios](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/LABORATORIOS)
 - [Projetos](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/tree/main/PROJETOS)
