@@ -1,0 +1,12 @@
+{
+  "name": "mapa-puc-minas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mapa das unidades PUC Minas com Mapbox e JSON Server",
+  "scripts": {
+    "start": "json-server db/db.json --static ."
+  },
+  "devDependencies": {
+    "json-server": "1.0.0-beta.15"
+  }
+}

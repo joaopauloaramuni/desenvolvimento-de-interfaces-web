@@ -1,0 +1,308 @@
+=====================================================================
+  EXERCÍCIOS - MAPA DAS UNIDADES PUC MINAS (Mapbox)
+=====================================================================
+
+Antes de começar: coloque o seu token do Mapbox no arquivo js/config.js
+e abra o index.html no navegador. O mapa com os marcadores deve aparecer.
+
+(Os Exercícios 1 e 2 usam o array "locais" que está no app.js.
+ No Exercício 3, os dados passam a vir do JSON Server.)
+
+
+=====================================================================
+  EXERCÍCIO 1 - Lista de unidades com "voar até"
+=====================================================================
+
+ENUNCIADO
+Crie um painel branco no canto superior esquerdo do mapa com a lista
+das unidades da PUC Minas. A lista deve ser gerada pelo JavaScript a
+partir do array "locais". Quando o usuário clicar em um nome da lista,
+o mapa deve voar até aquela unidade e abrir o popup dela.
+
+PASSO A PASSO
+
+Passo 1 - Criar o painel no HTML
+No index.html, logo abaixo de <div id="map"></div>, cole:
+
+    <div id="painel">
+      <h2>Unidades</h2>
+      <ul id="lista"></ul>
+    </div>
+
+Passo 2 - Deixar o painel por cima do mapa
+No final do css/style.css, cole:
+
+    #painel {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      width: 250px;
+    }
+    #lista li { cursor: pointer; padding: 5px; }
+    #lista li:hover { background: #eee; }
+
+TESTE: abra a página. Deve aparecer uma caixa branca escrita
+"Unidades" no canto do mapa (ainda vazia).
+
+Passo 3 - Guardar o marcador numa variável
+No js/app.js, dentro do forEach, confira se a linha do marcador
+começa com "const marker =". Se não começar, acrescente:
+
+    const marker = new mapboxgl.Marker({ color: uni.cor })
+
+Passo 4 - Colocar cada unidade na lista
+Ainda dentro do forEach, logo depois do .addTo(map); do marcador:
+
+    const li = document.createElement('li');
+    li.textContent = uni.descricao;
+    document.getElementById('lista').appendChild(li);
+
+TESTE: os 7 nomes devem aparecer na caixa.
+
+Passo 5 - Fazer o mapa voar ao clicar
+Logo abaixo do código do passo 4:
+
+    li.addEventListener('click', () => {
+      map.flyTo({ center: uni.latlong, zoom: 15 });
+    });
+
+TESTE: clique num nome e o mapa deve ir até a unidade.
+
+Passo 6 - Abrir o popup junto
+Dentro do addEventListener, embaixo do flyTo, acrescente:
+
+    marker.togglePopup();
+
+TESTE: ao clicar, o mapa voa e o balão com nome e endereço abre.
+(Clicando de novo no mesmo nome, o balão fecha.)
+
+
+=====================================================================
+  EXERCÍCIO 2 - Filtro "Só favoritos"
+=====================================================================
+
+ENUNCIADO
+No mesmo painel, coloque um checkbox "Só favoritos". Quando estiver
+marcado, o mapa e a lista devem mostrar só as unidades com
+favorito: true. Quando desmarcar, todas as unidades voltam a aparecer.
+
+PASSO A PASSO
+
+Passo 1 - Criar o checkbox no HTML
+No index.html, dentro do <div id="painel">, entre o <h2> e o <ul>:
+
+    <label><input type="checkbox" id="soFavoritos"> Só favoritos</label>
+
+TESTE: o checkbox aparece no painel (ainda não faz nada).
+
+Passo 2 - Criar um array para guardar os marcadores
+No js/app.js, logo abaixo de "let map;", acrescente:
+
+    let marcadores = [];
+
+Passo 3 - Separar o desenho numa função
+Crie uma função nova chamada desenharUnidades e MOVA para dentro dela
+todo o forEach (o do Exercício 1). Troque "dadosLocais" por "unidades":
+
+    function desenharUnidades(unidades) {
+      unidades.forEach((uni) => {
+        ... (todo o código que já estava dentro do forEach) ...
+      });
+    }
+
+No lugar onde o forEach estava (dentro de montarMapa), chame a função:
+
+    desenharUnidades(dadosLocais);
+
+TESTE: a página deve continuar funcionando igual ao Exercício 1.
+
+Passo 4 - Guardar cada marcador no array
+Dentro do forEach, logo depois de criar o marcador (.addTo(map);):
+
+    marcadores.push(marker);
+
+Passo 5 - Apagar o que já estava desenhado
+No COMEÇO da função desenharUnidades, antes do forEach:
+
+    marcadores.forEach((m) => m.remove());
+    marcadores = [];
+    document.getElementById('lista').innerHTML = '';
+
+(Isso remove os marcadores antigos do mapa e limpa a lista,
+para não ficar tudo repetido quando desenhar de novo.)
+
+Passo 6 - Fazer o checkbox funcionar
+Dentro de montarMapa, logo depois de desenharUnidades(dadosLocais);
+
+    document.getElementById('soFavoritos').addEventListener('change', (evento) => {
+      if (evento.target.checked) {
+        desenharUnidades(dadosLocais.filter((uni) => uni.favorito));
+      } else {
+        desenharUnidades(dadosLocais);
+      }
+    });
+
+TESTE: marque o checkbox. Devem sobrar 5 unidades no mapa e na lista
+(Praça da Liberdade e Contagem somem). Desmarque e as 7 voltam.
+
+DESAFIO EXTRA
+Mostre uma estrela antes do nome das unidades favoritas na lista.
+Dica: troque a linha do li.textContent por:
+
+    li.textContent = (uni.favorito ? '★ ' : '') + uni.descricao;
+
+
+=====================================================================
+  EXERCÍCIO 3 - Favoritar e salvar com JSON Server
+=====================================================================
+
+ENUNCIADO
+Os dados das unidades devem sair do app.js e passar a vir do JSON Server
+(arquivo db/db.json). Em cada item da lista, coloque uma estrela:
+☆ = não é favorito, ★ = é favorito. Ao clicar na estrela, o favorito
+deve ser trocado e SALVO no db.json. Ao recarregar a página (F5),
+os favoritos devem continuar do jeito que o usuário deixou.
+
+O QUE VOCÊ PRECISA
+- Node.js instalado (https://nodejs.org). O JSON Server roda com ele.
+
+PASSO A PASSO
+
+Passo 1 - Criar o "banco de dados"
+Crie a pasta db e, dentro dela, o arquivo db.json. Cole o array das
+unidades dentro de um objeto, com o nome "locais":
+
+    {
+      "locais": [
+        ... cole aqui todas as unidades do array do app.js ...
+      ]
+    }
+
+Atenção: em JSON todas as chaves e textos usam aspas duplas ("),
+e não pode ter vírgula sobrando depois do último item.
+
+Passo 2 - Rodar o JSON Server
+Abra o terminal NA PASTA DO PROJETO e rode:
+
+    npx json-server db/db.json --static .
+
+Se aparecer "Ok to proceed? (y)", digite y e aperte Enter.
+Deixe esse terminal aberto. Para parar, use Ctrl + C.
+
+TESTE: abra http://localhost:3000/locais no navegador.
+Devem aparecer as 7 unidades em formato JSON.
+Agora abra o site por http://localhost:3000 (o próprio JSON Server
+mostra o index.html por causa do "--static .").
+
+Passo 3 - Guardar o endereço da API
+No final do js/config.js, acrescente:
+
+    const API_URL = 'http://localhost:3000/locais';
+
+Passo 4 - Buscar os dados com fetch
+No js/app.js, APAGUE o array inteiro "const locais = [ ... ];"
+e coloque no lugar:
+
+    let locais = [];
+
+Depois troque o window.onload por:
+
+    window.onload = () => {
+      fetch(API_URL)
+        .then((resposta) => resposta.json())
+        .then((dados) => {
+          locais = dados;
+          montarMapa(locais);
+        })
+        .catch(() => {
+          document.getElementById('lista').innerHTML =
+            '<li class="mensagem">Não consegui carregar os dados. O JSON Server está rodando?</li>';
+        });
+    };
+
+TESTE: a página deve funcionar igual antes, mas agora os dados vêm
+do servidor. (Pare o JSON Server com Ctrl + C e recarregue a página:
+deve aparecer a mensagem de erro. Depois rode ele de novo.)
+
+Passo 5 - Transformar o filtro numa função
+Precisamos redesenhar a tela depois de salvar um favorito, respeitando
+o filtro "Só favoritos". Crie esta função (fora de montarMapa):
+
+    function atualizarTela() {
+      const soFavoritos = document.getElementById('soFavoritos').checked;
+
+      if (soFavoritos) {
+        desenharUnidades(locais.filter((uni) => uni.favorito));
+      } else {
+        desenharUnidades(locais);
+      }
+    }
+
+Dentro de montarMapa, APAGUE o addEventListener do checkbox que você
+fez no Exercício 2 e coloque no lugar:
+
+    document.getElementById('soFavoritos').addEventListener('change', atualizarTela);
+
+TESTE: o filtro "Só favoritos" continua funcionando.
+
+Passo 6 - Colocar a estrela em cada item da lista
+Dentro do forEach de desenharUnidades, troque a linha do
+li.textContent por:
+
+    li.innerHTML = `
+      <span class="cor" style="background: ${uni.cor}"></span>
+      <span class="nome">${uni.descricao}<small>${uni.cidade}</small></span>
+      <button class="estrela ${uni.favorito ? 'ativa' : ''}" title="Favoritar">${uni.favorito ? '★' : '☆'}</button>
+    `;
+
+TESTE: cada unidade aparece com uma estrela (cheia ou vazia).
+
+Passo 7 - Criar a função que salva no servidor
+Crie esta função (fora das outras). Ela usa o método PATCH, que
+altera só um campo do registro (no caso, "favorito"):
+
+    function salvarFavorito(uni) {
+      fetch(`${API_URL}/${uni.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ favorito: !uni.favorito })
+      })
+        .then((resposta) => resposta.json())
+        .then((atualizado) => {
+          uni.favorito = atualizado.favorito;
+          atualizarTela();
+        })
+        .catch(() => alert('Erro ao salvar o favorito. O JSON Server está rodando?'));
+    }
+
+(O "!" inverte o valor: true vira false e false vira true.)
+
+Passo 8 - Ligar a estrela à função
+Dentro do forEach, logo depois do li.addEventListener do Exercício 1:
+
+    const estrela = li.querySelector('.estrela');
+    estrela.addEventListener('click', (evento) => {
+      evento.stopPropagation();
+      salvarFavorito(uni);
+    });
+
+(O stopPropagation impede que o clique na estrela também conte como
+clique no item da lista, senão o mapa "voaria" junto.)
+
+TESTE FINAL:
+1. Clique na estrela vazia da Praça da Liberdade: ela fica cheia ★.
+2. Abra o arquivo db/db.json: o "favorito" dela agora é true.
+3. Aperte F5: a estrela continua cheia.
+4. Ligue "Só favoritos" e desmarque uma estrela: a unidade some da lista.
+
+OBSERVAÇÃO
+O JSON Server reescreve o db.json quando salva. É normal os ids
+virarem texto ("1" em vez de 1) e aparecer uma linha "$schema".
+
+Passo 9 (opcional) - Deixar bonito
+Copie o css/style.css deste projeto. Ele tem o painel com cabeçalho,
+a chave "Só favoritos", a estrela amarela e o layout para celular.
