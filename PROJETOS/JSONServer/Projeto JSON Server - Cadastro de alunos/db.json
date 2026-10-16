@@ -1,0 +1,15 @@
+{
+  "alunos": [
+    {
+      "id": "3",
+      "nome": "Carla Mendes",
+      "curso": "Mobile"
+    },
+    {
+      "nome": "Arthur Bicalho",
+      "curso": "Ciência da Computação",
+      "id": "D2LUJgl22yA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
