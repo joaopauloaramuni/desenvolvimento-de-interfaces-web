@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidades PUC Minas - Mapa</title>
+
+  <!-- Mapbox GL JS (CSS) -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.32.0/mapbox-gl.css" rel="stylesheet">
+
+  <!-- Estilos do projeto -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Exercício 1: painel com a lista de unidades -->
+  <div id="painel">
+    <header>
+      <h2>Unidades PUC Minas</h2>
+      <p>Clique para ver no mapa · ☆ para favoritar</p>
+    </header>
+
+    <!-- Exercício 2: filtro de favoritos -->
+    <label class="filtro"><input type="checkbox" id="soFavoritos"> Só favoritos</label>
+
+    <ul id="lista"></ul>
+  </div>
+
+  <!-- Mapbox GL JS (biblioteca) -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.32.0/mapbox-gl.js"></script>
+
+  <!-- Configuração: token do Mapbox e endereço do JSON Server -->
+  <script src="js/config.js"></script>
+
+  <!-- Lógica do mapa -->
+  <script src="js/app.js"></script>
+</body>
+</html>

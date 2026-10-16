@@ -1,0 +1,19 @@
+{
+  "cartas": [
+    {
+      "cardId": "dp3-3",
+      "nome": "Charizard",
+      "colecao": "Secret Wonders",
+      "imagem": "https://images.pokemontcg.io/dp3/3.png",
+      "id": "wv8NxxPq-tI"
+    },
+    {
+      "cardId": "xy5-1",
+      "nome": "Weedle",
+      "colecao": "Primal Clash",
+      "imagem": "https://images.pokemontcg.io/xy5/1.png",
+      "id": "m0aVXiu7Yac"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
