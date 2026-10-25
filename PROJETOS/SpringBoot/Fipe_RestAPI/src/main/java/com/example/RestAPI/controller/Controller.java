@@ -1,10 +1,9 @@
 package com.example.RestAPI.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.example.RestAPI.service.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
@@ -15,7 +14,7 @@ public class Controller {
     public String consultarMarcas(){
         return service.consultarMarcas();
     }
-    @GetMapping("/modelos/{marca}") // https://localhost:8080/modelos/59
+    @GetMapping("/modelos/{marca}")
     public String consultarModelos(@PathVariable int marca){
         return service.consultarModelos(marca);
     }
