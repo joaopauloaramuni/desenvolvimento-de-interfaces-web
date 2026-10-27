@@ -1,0 +1,50 @@
+/* =====================================================================
+   Avisos (Toast do Bootstrap) com as cores da tela do aparelho
+   ===================================================================== */
+.toast-container {
+  z-index: 200;
+  padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+}
+
+.pokedex-toast {
+  --bs-toast-bg: var(--screen-panel);
+  --bs-toast-color: var(--screen-ink);
+  --bs-toast-border-radius: 12px;
+  --bs-toast-max-width: 360px;
+  --bs-toast-font-size: 0.95rem;
+  border-left: 5px solid var(--star) !important;
+  box-shadow:
+    0 0 0 1px var(--screen-line),
+    0 12px 28px rgb(0 0 0 / 0.28);
+  font-family: var(--font-body);
+}
+
+.pokedex-toast--remove {
+  border-left-color: var(--screen-muted) !important;
+}
+
+.pokedex-toast--error {
+  border-left-color: var(--screen-error) !important;
+}
+
+.pokedex-toast__icon {
+  display: inline-grid;
+  color: var(--star);
+}
+
+.pokedex-toast--remove .pokedex-toast__icon {
+  color: var(--screen-muted);
+}
+
+.pokedex-toast--error .pokedex-toast__icon {
+  color: var(--screen-error);
+}
+
+:root[data-theme="dark"] .pokedex-toast .btn-close {
+  filter: var(--bs-btn-close-white-filter);
+}
+
+/* Tema Holo: o aviso fica fora da tela (sobre a mesa), então usa a cor opaca da tela azul */
+:root[data-skin="holo"] .pokedex-toast {
+  --bs-toast-bg: var(--screen-solid);
+}
