@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐓</text></svg>">
+  <title>A Fazenda 2026 | Votar</title>
+
+  <!-- Bootstrap 5 (cópia local; também pode ser usado o CDN do jsDelivr) -->
+  <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+  <!-- Tema da fazenda (depois do Bootstrap, para poder sobrescrever) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar do Bootstrap (vira menu "hambúrguer" em telas pequenas) -->
+  <nav class="navbar navbar-expand-md navbar-dark navbar-fazenda">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="img/logo-fazenda.jpg" alt="A Fazenda" class="rounded">
+        <span class="fonte-titulo text-palha">Votação 2026</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="votacao.html">Votar</a></li>
+          <li class="nav-item"><a class="nav-link" href="resultado.html">Resultado</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <header class="mb-4">
+      <h1 class="text-palha">Quem você quer eliminar?</h1>
+      <p class="fs-5 mb-0">Cada clique conta um voto para tirar o peão da fazenda.</p>
+    </header>
+
+    <!-- Alert do Bootstrap, exibido após cada voto (POST /votos) -->
+    <div id="aviso" class="alert d-none" role="status"></div>
+
+    <!-- Cards dos 3 participantes da roça -->
+    <section id="grade-roca" class="row row-cols-1 row-cols-md-3 g-4"></section>
+
+    <section class="mt-5">
+      <h2 class="text-palha h3">Demais peões</h2>
+      <p class="opacity-75">Fora da roça nesta semana, não podem receber votos.</p>
+      <div id="grade-demais" class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3"></div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 small opacity-75">DIAW 2026, PUC Minas</footer>
+
+  <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/votacao.js"></script>
+</body>
+</html>

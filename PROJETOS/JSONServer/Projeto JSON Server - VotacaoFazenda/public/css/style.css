@@ -1,0 +1,164 @@
+/* =========================================================
+   A Fazenda 2026 | Votação  (Bootstrap 5 + JSON Server)
+   Este arquivo só complementa o Bootstrap com o tema da
+   fazenda: fontes, cores, fundo de madeira e alguns detalhes.
+   ========================================================= */
+
+/* Fontes locais (pasta public/fonts), funcionam mesmo sem internet */
+@font-face { font-family: 'Rye'; src: url('../fonts/rye.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Nunito'; src: url('../fonts/nunito-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Nunito'; src: url('../fonts/nunito-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Nunito'; src: url('../fonts/nunito-800.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+
+:root {
+  --madeira-escura: #3a2211;
+  --madeira-clara: #9a6a3c;
+  --palha: #f2cf73;
+  --papel: #f4e6c4;
+  --tinta: #2b1a0c;
+  --celeiro: #b5332a;
+
+  /* Variáveis do próprio Bootstrap, trocadas para o tema */
+  --bs-body-font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  --bs-danger: #b5332a;
+  --bs-danger-rgb: 181, 51, 42;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--papel);
+  background-color: #4a2d16;
+  /* tábuas de madeira: emendas escuras a cada 120px + veios finos */
+  background-image:
+    repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0 3px, transparent 3px 120px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 9px),
+    linear-gradient(180deg, #5a3719, #432812);
+}
+
+h1, h2, h3, .fonte-titulo {
+  font-family: 'Rye', Georgia, serif;
+  font-weight: 400;
+}
+
+.text-palha { color: var(--palha); }
+.bg-papel  { background-color: var(--papel); color: var(--tinta); }
+
+/* ---------- Navbar ---------- */
+.navbar-fazenda {
+  background: var(--madeira-escura);
+  border-bottom: 4px solid var(--madeira-clara);
+}
+
+.navbar-fazenda .navbar-brand img {
+  height: 56px;
+  width: 76px;
+  object-fit: cover;
+}
+
+.navbar-fazenda .nav-link {
+  font-weight: 800;
+  border-radius: 6px;
+}
+
+.navbar-fazenda .nav-link.active {
+  background: var(--palha);
+  color: var(--tinta) !important;
+}
+
+/* ---------- Botões ---------- */
+.btn-danger {
+  --bs-btn-bg: var(--celeiro);
+  --bs-btn-border-color: var(--celeiro);
+  --bs-btn-hover-bg: #9e2a22;
+  --bs-btn-hover-border-color: #9e2a22;
+  font-weight: 800;
+}
+
+/* ---------- Home ---------- */
+.fazendeiro {
+  max-width: 340px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 0;
+  border: 12px solid var(--madeira-clara);
+  box-shadow: 0 0 0 4px var(--madeira-escura), 0 18px 40px rgba(0, 0, 0, 0.45);
+  background: #87c8ea;
+}
+
+.legenda-fazendeiro {
+  display: inline-block;
+  margin-top: -1.4rem;
+  position: relative;
+  background: var(--palha);
+  color: var(--tinta);
+  transform: rotate(-2deg);
+}
+
+.roca-pill {
+  border: 2px solid var(--celeiro);
+  background: rgba(0, 0, 0, 0.3);
+  font-weight: 800;
+}
+
+.roca-pill img {
+  width: 72px;
+  height: 42px;
+  object-fit: cover;
+}
+
+/* ---------- Cards dos participantes ---------- */
+.card-participante {
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.card-participante .card-img-top {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Quem está na roça vira um cartaz de "procurado" */
+.card-roca {
+  border: 4px solid var(--celeiro);
+  transform: rotate(-1deg);
+}
+
+.col:nth-child(2) .card-roca {
+  transform: rotate(1deg);
+}
+
+.selo-roca {
+  top: 1rem;
+  right: -0.5rem;
+  transform: rotate(6deg);
+  font-family: 'Rye', Georgia, serif;
+  font-weight: 400;
+}
+
+/* Participantes fora da roça ficam mais apagados */
+.card-fora {
+  filter: saturate(0.55);
+  opacity: 0.9;
+}
+
+/* ---------- Resultado ---------- */
+.placar-foto {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.placar-lider {
+  border: 4px solid var(--celeiro) !important;
+}
+
+.progress {
+  height: 22px;
+  background: rgba(43, 26, 12, 0.15);
+}
+
+@media (max-width: 576px) {
+  .placar-foto { width: 96px; height: 54px; }
+}
+
+.bg-madeira { background-color: #6b4423 !important; }

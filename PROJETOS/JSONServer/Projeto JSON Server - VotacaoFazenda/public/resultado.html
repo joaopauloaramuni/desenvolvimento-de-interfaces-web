@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐓</text></svg>">
+  <title>A Fazenda 2026 | Resultado</title>
+
+  <!-- Bootstrap 5 (cópia local; também pode ser usado o CDN do jsDelivr) -->
+  <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+  <!-- Tema da fazenda (depois do Bootstrap, para poder sobrescrever) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar do Bootstrap (vira menu "hambúrguer" em telas pequenas) -->
+  <nav class="navbar navbar-expand-md navbar-dark navbar-fazenda">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="img/logo-fazenda.jpg" alt="A Fazenda" class="rounded">
+        <span class="fonte-titulo text-palha">Votação 2026</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="votacao.html">Votar</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="resultado.html">Resultado</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <header class="mb-4">
+      <h1 class="text-palha">Parcial da eliminação</h1>
+      <p class="mb-0"><strong id="total" class="fonte-titulo display-6 text-palha">0</strong>
+        <span id="total-legenda">votos computados</span></p>
+    </header>
+
+    <!-- Preenchido pelo resultado.js com GET /participantes?naRoca=true + GET /votos -->
+    <div id="placar" class="d-grid gap-3"></div>
+
+    <button id="botao-zerar" type="button" class="btn btn-outline-light fw-bold mt-4 d-none"
+            data-bs-toggle="modal" data-bs-target="#modal-zerar">
+      Zerar votação
+    </button>
+  </main>
+
+  <!-- Modal do Bootstrap para confirmar a exclusão dos votos -->
+  <div class="modal fade" id="modal-zerar" tabindex="-1" aria-labelledby="modal-zerar-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-papel">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modal-zerar-titulo">Zerar votação</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">Apagar todos os votos do JSON Server e reiniciar a votação?</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
+          <button id="confirmar-zerar" type="button" class="btn btn-danger">Sim, zerar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 small opacity-75">DIAW 2026, PUC Minas</footer>
+
+  <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/resultado.js"></script>
+</body>
+</html>
