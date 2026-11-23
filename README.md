@@ -95,6 +95,41 @@
 
 -----
 
+##### 🌟 Projetos de alunos em destaque
+
+Projetos desenvolvidos por alunos da PUC Minas **por iniciativa própria**, indicados como **sugestão de estudo**. Explore o código, rode localmente, veja como os conceitos da disciplina aparecem em um projeto real e use como inspiração para os seus próprios trabalhos! 💡
+
+###### 🕹️ DIW Arcade — Fernando Leite Pagani
+Plataforma de **estudo gamificada** para a disciplina de **Desenvolvimento de Interfaces Web**, criada de forma independente pelo aluno **Fernando Leite Pagani**, do curso de **Ciência da Computação da PUC Minas**. O conteúdo é baseado nas aulas e nos projetos deste repositório e está organizado em **20 nós distribuídos em 6 unidades**. A **Unidade 6 · Prova 2** é dedicada à revisão para a segunda avaliação e cobre leitura de código, tipos e coerção, DOM e eventos, URLs e parâmetros, programação assíncrona com `fetch` e formulários. 🎮
+
+🧩 **O que você encontra no DIW Arcade:**
+
+- 🌳 **Árvore de habilidades** para acompanhar sua evolução nos conteúdos.
+- ❓ **Quizzes**, incluindo questões com trechos de código cuja saída foi verificada pela execução real.
+- 🃏 **Flashcards com repetição espaçada**, que mostram cada carta no momento certo de revisar.
+- 💻 **Desafios de código executados no próprio navegador**, com editor integrado e testes automáticos (`Ctrl+Enter` para rodar).
+- 🧪 **Laboratórios** práticos.
+- 📊 **Estatísticas e XP**, com o progresso salvo no navegador (`localStorage`).
+
+🛠️ **Tecnologias utilizadas:** React 19, TypeScript, Vite, React Router, Bootstrap 5, CodeMirror (editor de código), Zod (validação de dados), Vitest + Testing Library (testes), ESLint com regras de acessibilidade (`jsx-a11y`), Playwright + axe (testes de acessibilidade) e deploy na Vercel.
+
+📖 **Como usar para estudar:**
+
+- 🎯 Use o site para **revisar o conteúdo e treinar para as provas**, principalmente a Unidade 6 antes da Prova 2.
+- 🔍 Leia o código-fonte para ver na prática **componentização com React, rotas em uma SPA, uso de `localStorage`, execução isolada de código em `iframe` com `sandbox`** e configuração de deploy na Vercel (`vercel.json`).
+- ✅ Observe também as **boas práticas de engenharia** do projeto: TypeScript estrito, testes automatizados, lint, validação de conteúdo e preocupação com acessibilidade.
+
+🔗 **Links:**
+
+- 💻 [Repositório no GitHub](https://github.com/fernandoleitepagani/diw-arcade)
+- 🚀 [Acesse o DIW Arcade online (Vercel)](https://diw-arcade.vercel.app/)
+
+> ⚠️ O DIW Arcade é um projeto **independente** de aluno, um material **complementar** de estudo. Ele não substitui as aulas, os slides e o material oficial da disciplina.
+
+> 👏 Parabéns ao Fernando pela iniciativa! Desenvolveu um projeto por conta própria e quer compartilhá-lo com a turma? Fale com o professor!
+
+-----
+
 ##### 🛠️ IDEs e Ferramentas
 
 ###### ⚙️ Ambientes de desenvolvimento para produtividade e depuração  
