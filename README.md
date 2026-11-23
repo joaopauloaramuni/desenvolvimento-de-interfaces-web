@@ -115,7 +115,7 @@ Plataforma de **estudo gamificada** para a disciplina de **Desenvolvimento de In
 
 📖 **Como usar para estudar:**
 
-- 🎯 Use o site para **revisar o conteúdo e treinar para as provas**, principalmente a Unidade 6 antes da Prova 2.
+- 🎯 Use o site para **revisar o conteúdo e treinar para as provas**.
 - 🔍 Leia o código-fonte para ver na prática **componentização com React, rotas em uma SPA, uso de `localStorage`, execução isolada de código em `iframe` com `sandbox`** e configuração de deploy na Vercel (`vercel.json`).
 - ✅ Observe também as **boas práticas de engenharia** do projeto: TypeScript estrito, testes automatizados, lint, validação de conteúdo e preocupação com acessibilidade.
 
