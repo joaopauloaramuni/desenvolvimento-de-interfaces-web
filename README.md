@@ -100,7 +100,7 @@
 Projetos desenvolvidos por alunos da PUC Minas **por iniciativa própria**, indicados como **sugestão de estudo**. Explore o código, rode localmente, veja como os conceitos da disciplina aparecem em um projeto real e use como inspiração para os seus próprios trabalhos! 💡
 
 ###### 🕹️ DIW Arcade — Fernando Leite Pagani
-Plataforma de **estudo gamificada** para a disciplina de **Desenvolvimento de Interfaces Web**, criada de forma independente pelo aluno **Fernando Leite Pagani**, do curso de **Ciência da Computação da PUC Minas**. O conteúdo é baseado nas aulas e nos projetos deste repositório e está organizado em **20 nós distribuídos em 6 unidades**. A **Unidade 6 · Prova 2** é dedicada à revisão para a segunda avaliação e cobre leitura de código, tipos e coerção, DOM e eventos, URLs e parâmetros, programação assíncrona com `fetch` e formulários. 🎮
+Plataforma de **estudo gamificada** para a disciplina de **Desenvolvimento de Interfaces Web**, criada de forma independente pelo aluno **Fernando Leite Pagani**, do curso de **Ciência da Computação da PUC Minas**. O conteúdo é baseado nas aulas e nos projetos deste repositório e está organizado em **20 nós distribuídos em 6 unidades**.
 
 🧩 **O que você encontra no DIW Arcade:**
 
